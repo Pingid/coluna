@@ -1,0 +1,22 @@
+# Imports
+imports_granularity = "Module"
+group_imports = "StdExternalCrate" # group std, external, and local imports
+
+
+# Function and struct layout
+fn_params_layout = "Compressed"
+where_single_line = true        # keep simple where clauses on one line
+
+# Control braces and blocks
+brace_style = "SameLineWhere"          # place braces on same line as where
+control_brace_style = "AlwaysSameLine"
+
+# Formatting style
+format_macro_bodies = true # format `format!`/`println!` args
+normalize_comments = true  # normalize comment spacing
+
+# Misc
+edition = "2021"
+use_field_init_shorthand = true
+reorder_imports = true
+reorder_modules = true
