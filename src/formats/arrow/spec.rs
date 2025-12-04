@@ -61,7 +61,11 @@ fn get_type_builder(field: &datatypes::Field, rows: usize, vals: usize) -> (Type
         DT::Utf8View => todo!("Utf8View type not yet supported"),
         DT::List(list_field) => {
             let (type_id, builder) = get_type_builder(list_field, rows, vals);
-            let field = Field::new(list_field.name().to_string(), type_id.clone(), list_field.is_nullable());
+            let field = Field::new(
+                list_field.name().to_string(),
+                type_id.clone(),
+                list_field.is_nullable(),
+            );
             (
                 TI::List(Box::new(type_id)),
                 B::List(ListBuilder::new(field, builder, rows)),
